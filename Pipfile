@@ -11,6 +11,7 @@ requests = "*"
 sqlalchemy = "*"
 lxml = "*"
 beautifulsoup4 = "*"
+gevent = "*"
 
 [requires]
-python_version = "3.5"
+python_version = "3"
