@@ -103,8 +103,9 @@ TEST_IP = "http://httpbin.org"  # 测试IP是否可用
 
 # 其他配置
 API_PORT = 8765  # web端口配置
-MAX_CHECK = 3
-MAX_DOWNLOAD = 3
+MAX_CHECK = 10
+MAX_DOWNLOAD = 10
+TASK_QUEUE_SIZE = 100
 
 check = [
     "https://www.ip.cn/index.php?ip=112.97.251.46",
