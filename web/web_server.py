@@ -56,9 +56,9 @@ def readme():
     """
 
 
-def run():
-    app.run(port=API_PORT, debug=True)
+def web_run():
+    app.run(port=API_PORT, debug=False)
 
 
 if __name__ == "__main__":
-    run()
+    web_run()

@@ -104,7 +104,7 @@ TEST_IP = "http://httpbin.org"  # 测试IP是否可用
 # 其他配置
 API_PORT = 8765  # web端口配置
 MAX_CHECK = 10
-MAX_DOWNLOAD = 10
+MAX_DOWNLOAD = 5
 TASK_QUEUE_SIZE = 100
 
 check = [

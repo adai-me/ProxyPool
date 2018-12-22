@@ -66,9 +66,16 @@ class Spider():
         for url in parser["urls"]:
             response = self.download(url)
             if response:
-                prowies = Parser().parser(response, parser)
-                for proxy in prowies:
+                proxies = Parser().parser(response, parser)
+                for proxy in proxies:
+                    # print(proxy)
                     self.queue.put(proxy)
+                    # while True:
+                    #     if self.queue.full():
+                    #         time.sleep(0.5)
+                    #     else:
+                    #         self.queue.put(proxy)
+                    #         break
 
     def run(self):
         spawns = []
@@ -85,12 +92,13 @@ def start_spider(queue):
     spider = Spider(queue)
     spider.run()
 
+
 def test():
     url = "https://www.kuaidaili.com/proxylist/1"
     # response = download(url)
     # parser = PARSER_LIST[0]
-    # prowies = Parser().parse(response, parser)
-    # print(prowies[0])
+    # proxies = Parser().parse(response, parser)
+    # print(proxies[0])
     # url = "http://ip.taobao.com/service/getIpInfo.php?ip=210.75.225.254"
     # print(requests.get(url))
     # SQLManager().drop()
