@@ -94,16 +94,8 @@ def start_spider(queue):
 
 
 def test():
-    url = "https://www.kuaidaili.com/proxylist/1"
-    # response = download(url)
-    # parser = PARSER_LIST[0]
-    # proxies = Parser().parse(response, parser)
-    # print(proxies[0])
-    # url = "http://ip.taobao.com/service/getIpInfo.php?ip=210.75.225.254"
-    # print(requests.get(url))
-    # SQLManager().drop()
-    # SQLManager().create()
-    # crawl(PARSER_LIST[0])
+    for parser in PARSER_LIST[2:3]:
+        Spider().crawl(parser)
 
 
 if __name__ == "__main__":

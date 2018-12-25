@@ -32,6 +32,13 @@ DEFAULT_SCORE = 10  # 默认给抓取的ip分配10分,每次连接失败,减一�
 
 # 解析设置
 """
+    {
+        "urls": [],
+        "type": "xpath",
+        "module": "",
+        "pattern": "",
+        "position": {}
+    }
 urls: 网页列表
 type: 解析模式
 module: 自定义模块
@@ -42,8 +49,16 @@ PARSER_LIST = [
     {
         "urls": ["http://www.kuaidaili.com/proxylist/%s/" % n for n in range(1, 11)],
         "type": "xpath",
+        "module": "",
         "pattern": "//*[@id='freelist']/table/tbody/tr",
         "position": {"ip": "./td[1]", "port": "./td[2]", "type": "./td[3]", "protocol": "./td[4]"}
+    },
+    {
+        "urls": ["http://www.xicidaili.com/%s/%s" % (m, n) for m in ["nn", "nt", "wn", "wt"] for n in range(1, 11)],
+        "type": "xpath",
+        "module": "",
+        "pattern": ".//*[@id='ip_list']/tr[position()>1]",
+        "position": {"ip": "./td[2]", "port": "./td[3]", "type": "./td[5]", "protocol": "./td[6]"}
     }
 ]
 
